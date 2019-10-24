@@ -84,7 +84,6 @@ app.get('/api/books/', (req, res) => {
  * Add a book information into database
  */
 app.post('/api/books/', (req, res) => {
-
   /*
    * New Book information in req.body
    */
@@ -115,7 +114,6 @@ app.post('/api/books/', (req, res) => {
    * return the new book information object as json
    */
 });
-
 /*
  * Update a book information based upon the specified ID
  */
@@ -136,19 +134,15 @@ app.delete('/api/books/:id', (req, res) => {
    */
   console.log(req.params._id);
   let id = req.params.id;
-  Books.deleteOne({
-    _id: id
-  })
-	Books.remove({
-		_id : id
-	}, function(err) {
+  Books.deleteOne({ _id: id });
+  Books.remove({ _id : id}, 
+    function(err) {
 		if (err)
 			res.send(err);
 		else
 			res.send('Successfully! Employee has been Deleted.');	
 	});
 });
-
 
 /**********
  * SERVER *
