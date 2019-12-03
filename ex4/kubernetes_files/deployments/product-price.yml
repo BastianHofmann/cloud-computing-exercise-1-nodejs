@@ -18,4 +18,4 @@ spec:
         - name: product-price
           image: bastianhofmann/microservice:productprice
           ports:
-            - containerPort: 9001
+            - containerPort: 9003
